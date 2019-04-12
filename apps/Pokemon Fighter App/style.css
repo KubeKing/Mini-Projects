@@ -1,0 +1,49 @@
+.background {
+    position:absolute; top:0px; left:0px; z-index: -1;
+}
+.foreground {
+    position: absolute; left: 40%; top: 500px; z-index: 1;
+}
+canvas {
+    border: 1px solid black;
+}
+body {
+    margin: 0;
+    text-align: center;
+}
+#menu {
+    position: fixed;
+    text-align: center;
+    font-size: 300%;
+    top: 750px;
+    left: 70%;
+    background: white;
+}
+.fight:hover span {color: black;}
+.fight span {color: white;}
+.party:hover span {color: black;}
+.party span {color: white;}
+.bag:hover span {color: black;}
+.bag span {color: white;}
+.run:hover span {color: black;}
+.run span {color: white;}
+
+.buttonDef {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    outline:none;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 150px;
+    height: 50px;
+  }
+
+.buttonDef:hover {
+    font-weight: bold;
+}  
