@@ -5,7 +5,7 @@
     position: absolute; left: 40%; top: 500px; z-index: 1;
 }
 canvas {
-    border: 1px solid black;
+    border: 1px solid black; z-index: 2;
 }
 body {
     margin: 0;
@@ -19,14 +19,14 @@ body {
     left: 70%;
     background: white;
 }
-.fight:hover span {color: black;}
-.fight span {color: white;}
-.party:hover span {color: black;}
-.party span {color: white;}
-.bag:hover span {color: black;}
-.bag span {color: white;}
-.run:hover span {color: black;}
-.run span {color: white;}
+.fight:hover span.selector {color: black;}
+.fight span.selector {color: transparent;}
+.party:hover span.selector {color: black;}
+.party span.selector {color: transparent;}
+.bag:hover span.selector {color: black;}
+.bag span.selector {color: transparent;}
+.run:hover span.selector {color: black;}
+.run span.selector {color: transparent;}
 
 .buttonDef {
     background-color: Transparent;
