@@ -3,23 +3,24 @@
 <head>
     <title>Test</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="src\js\initPokedex.js"></script>
+    <script src="js\initPokedex.js"></script>
+    <script src="js\control.js"></script>
+    <script>
+        function ImgSize(source){
+          source.height = window.innerHeight;
+          source.width = window.innerWidth;
+          return true;
+        }
+    </script>
 </head>
 <body>
-    <div>
-        <img class="background" src="images\props\grassBackground.png" onload="ImgSize(this)">
-        <img class="forground" src="images\props\fightingGrass.png" onload="ImgSize(this)">
-        <canvas class="background"></canvas>
-        <script>
-            function ImgSize(source){
-              source.height = window.innerHeight;
-              source.width = window.innerWidth;
-              return true;
-            }
-        </script>
-        <script src="src\js\canvas.js"></script>
+    <div class="graphics">
+        <canvas id="background"></canvas>
+        <canvas id="foreground"></canvas>
+        <canvas id="sprites"></canvas>
+        <script src="js\canvas.js"></script>
     </div>
-    <div>
+    <div class="interactions">
         <table id="menu">
             <tr>
                 <td><button class="buttonDef fight"><span class="selector">> </span><span class="btnName">Fight</span></button></td>
@@ -30,7 +31,8 @@
                 <td><button class="buttonDef run"><span class="selector">> </span><span class="btnName">Run</span></button></td>
             </tr>
         </table>
-        <script src="src\js\menu.js"></script>
+        <script src="js\menu.js"></script>
+        <button id="reset" onclick="reset()">Reset</button>
     </div>
 </body>
 </html>

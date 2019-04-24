@@ -1,11 +1,16 @@
-.background {
-    position:absolute; top:0px; left:0px; z-index: -1;
+#background {
+    z-index: 1;
 }
-.foreground {
-    position: absolute; left: 40%; top: 500px; z-index: 1;
+#foreground {
+    z-index: 2;
+}
+#sprites {
+    z-index: 3;
 }
 canvas {
-    border: 1px solid black; z-index: 2;
+    position: absolute; top:0px; left:0px; 
+    border: 1px solid black;
+    background-color: transparent;
 }
 body {
     margin: 0;
@@ -15,10 +20,13 @@ body {
     position: fixed;
     text-align: center;
     font-size: 300%;
-    top: 750px;
+    top: 80%;
     left: 70%;
     background: white;
+    z-index: 4;
+    width: 20%;
 }
+
 .fight:hover span.selector {color: black;}
 .fight span.selector {color: transparent;}
 .party:hover span.selector {color: black;}
@@ -30,14 +38,14 @@ body {
 
 .buttonDef {
     background-color: Transparent;
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     border: none;
-    outline:none;
+    outline: none;
     padding: 16px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 33.25%;
     margin: 4px 2px;
     cursor: pointer;
     width: 150px;
@@ -47,3 +55,11 @@ body {
 .buttonDef:hover {
     font-weight: bold;
 }  
+
+#reset {
+    position: fixed;
+    background: transparent;
+    top: 80%;
+    left: 70%;
+    z-index: 5;
+}

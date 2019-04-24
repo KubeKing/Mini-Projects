@@ -4,20 +4,25 @@ from time import sleep
 
 #https://www.quizlet.com
 
+def multKey(key, times):
+    for i in range(times):
+        pyautogui.press(key)
+        sleep(0.005)
+
 def autoWriteMode(tts):
+    #Set zoom to 80%
     sleep(tts)
     pyautogui.click(635, 415)
     sleep(0.1)
     while True:
         if keyboard.is_pressed('h'):
             break
-        sleep(0.016)
-        pyautogui.press('j')
-        sleep(0.016)
-        pyautogui.press('i')
+        sleep(0.5)
+        pyautogui.press('o')
+        sleep(0.25)
         pyautogui.press('enter')
-        sleep(0.016)
-        pyautogui.click(1465, 500)
+        sleep(0.25)
+        pyautogui.press('o')
         if keyboard.is_pressed('h'):
             break
 
