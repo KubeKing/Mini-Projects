@@ -19,7 +19,7 @@ function buttonclicked(e){
             try{btnCon[i].textContent = menus['fight'][i];}catch(err){btnCon[i].textContent = "";}
         }
     }else if(menus['fight'].includes((e.textContent).substr(2,e.textContent.length))){
-        console.log('Yeet')
+        attack(currentPokemon, currentOpp, moveSet[(e.textContent).substr(2,e.textContent.length)]);
     }
 }
 

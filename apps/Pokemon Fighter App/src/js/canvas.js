@@ -38,13 +38,21 @@ pokeSpirteAI.onload = function(){cs.drawImage(pokeSpirteAI, foreground.width*0.7
 pokeSpirteAI.src = "..\\images\\pokemon\\"+currentOpp['Name']+".png";
 
 //Health bars
+var last = 0;
+
 cs.beginPath();
 cs.rect(foreground.width*0.7, foreground.height*0.1, 80*3.75, 50);
 cs.stroke();
 
-cs.beginPath();
-cs.fillStyle = "green"
-cs.fillRect(foreground.width*0.702, foreground.height*0.103, 80*3.65, 45*percentHealthAI);
-cs.stroke();
+function AIHealthBar(){
+    cs.clearRect(foreground.width*0.702, foreground.height*0.103, last+4, 45);
+    cs.beginPath();
+    cs.fillStyle = "green"
+    cs.fillRect(foreground.width*0.702, foreground.height*0.103, (80*3.65)*percentHealthAI, 45);
+    last = (80*3.65)*percentHealthAI;
+    cs.stroke();
+}
+
+AIHealthBar();
 
 //Sprites End
