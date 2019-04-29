@@ -4,8 +4,11 @@
 #foreground {
     z-index: 2;
 }
-#sprites {
+#status {
     z-index: 3;
+}
+#sprites {
+    z-index: 4;
 }
 canvas {
     position: absolute; top:0px; left:0px; 
@@ -55,6 +58,15 @@ body {
 .buttonDef:hover {
     font-weight: bold;
 }  
+
+.dialog {
+    z-index: 4;
+    position: relative;
+    text-align: left;
+    margin-top: 2.5%;   
+    left: 15%;
+    font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px;
+}
 
 #reset {
     position: fixed;
