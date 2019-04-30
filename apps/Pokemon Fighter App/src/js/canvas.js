@@ -97,6 +97,6 @@ function shake(imgSrc, pokeMod, shakemod){
             }
           };
         }(), 1000/40);
-        setTimeout(function(){clearInterval(interval); cs.clearRect(pokeMod['IMG']['XPOS'], pokeMod['IMG']['YPOS'], pokeMod['IMG']['W'], pokeMod['IMG']['H']); cs.drawImage(img, pokeMod['IMG']['XPOS'], pokeMod['IMG']['YPOS'], pokeMod['IMG']['W'], pokeMod['IMG']['H']);}, 500); 
+        setTimeout(function(){clearInterval(interval); cs.clearRect(pokeMod['IMG']['XPOS'], pokeMod['IMG']['YPOS'], pokeMod['IMG']['W'], pokeMod['IMG']['H']); cs.drawImage(img, pokeMod['IMG']['XPOS'], pokeMod['IMG']['YPOS'], pokeMod['IMG']['W'], pokeMod['IMG']['H']);}, 400); 
     }, false);
 }

@@ -59,13 +59,15 @@ body {
     font-weight: bold;
 }  
 
-.dialog {
+#dialog {
     z-index: 4;
-    position: relative;
+    position: absolute;
     text-align: left;
-    margin-top: 2.5%;   
-    left: 15%;
-    font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px;
+    margin-top: 9%;   
+    left: 5%;
+    font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace; font-size: 28px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px;
+    width: auto;
+    height: auto;
 }
 
 #reset {
@@ -74,4 +76,22 @@ body {
     top: 80%;
     left: 70%;
     z-index: 5;
+}
+
+#AIHP {
+    font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace; font-size: 23.5px; font-style: normal; font-variant: normal; font-weight: 600; line-height: 24.4px;
+}
+
+#PlayerHP {
+    font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace; font-size: 30.4px; font-style: normal; font-variant: normal; font-weight: 600; line-height: 32.4px;
+}
+
+.hpStat {
+    position: absolute;
+    z-index: 4;
+}
+
+#playMusic {
+    position: relative;
+    z-index: 4;
 }

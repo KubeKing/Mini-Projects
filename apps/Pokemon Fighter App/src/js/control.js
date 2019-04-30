@@ -79,26 +79,38 @@ function calcDamage(move, defender){
     }else if(effective == '-'){
         dmg *= 0.5
     }
-    return(dmg);
+    return([Math.floor(dmg), effective]);
 }
 
 function attack(attacker, defender, move){
-    var dmg = calcDamage(move, defender);
-    if(defender['HP'] - dmg > 0){
-        defender['HP'] -= dmg;
-    }else{
-        defender['HP'] = 0;
-        if(defender['Name'] == currentPokemon['Name']){
-            setTimeout(function(){window.open("html\\loose.html", '_self');}, 1250);
+    if(Math.floor((Math.random() * 9)) < 8){        
+        var dmg = calcDamage(move, defender);
+        if(defender['HP'] - dmg[0] > 0){
+            defender['HP'] -= dmg[0];
         }else{
-            setTimeout(function(){window.open("html\\win.html", '_self');}, 1250);
+            defender['HP'] = 0;
+            if(defender['Name'] == currentPokemon['Name']){
+                setTimeout(function(){window.open("html\\loose.html", '_self');}, 1250);
+            }else{
+                setTimeout(function(){window.open("html\\win.html", '_self');}, 1250);
+            }
+            
         }
-        
+        var shakemod = 40 * (dmg[0]/defender['Base HP']);
+        defender['Bar']['l'] *= defender['HP']/defender['Base HP'];
+        if(dmg[1] == '+'){
+            updateBox(attacker['Name']+' used '+move['Name']+' and it was super effective!');
+        }else if(dmg[1] == '-'){
+            updateBox(attacker['Name']+' used '+move['Name']+' and it was not very effective.');
+        }else if(dmg[1] == 'normal'){
+            updateBox(attacker['Name']+' used '+move['Name']+'!');
+        }
+    }else{
+        updateBox(attacker['Name']+' used '+move['Name']+', but it MISSED!');
     }
-    var shakemod = 50 * (dmg/defender['Base HP']);
-    defender['Bar']['l'] *= defender['HP']/defender['Base HP'];
     setTimeout(function(){shake("..\\images\\pokemon\\"+defender['Name']+".png", defender, shakemod);}, 300);
-    setTimeout(function(){healthBar(defender['Bar']);}, 400);
+    setTimeout(function(){healthBar(defender['Bar']); updateHP();}, 400);
+
 }
 
 function aiMove(){

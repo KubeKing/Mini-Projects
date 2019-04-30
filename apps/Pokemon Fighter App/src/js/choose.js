@@ -2,7 +2,7 @@ var buttons = document.getElementsByClassName("pokemon");
 
 function buttonclicked(e){
     var classes = e.className.split(" ");
-    var currentPokemon = (((e.src).substr(92,e.src.length)).split("."))[0];
+    var currentPokemon = (((e.src).substr(((e.src).indexOf('pokemon')+8),e.src.length)).split("."))[0];
     var holder = pokelist.indexOf(currentPokemon);
     while(holder == pokelist.indexOf(currentPokemon)){
         holder = Math.floor((Math.random() * pokelist.length));

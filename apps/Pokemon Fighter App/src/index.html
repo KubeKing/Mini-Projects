@@ -5,11 +5,17 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="js\initPokedex.js"></script>
     <script src="js\control.js"></script>
+    <audio id="music">
+        <source src="..\audio\battle.mp3">
+    </audio>
     <script>
-        function ImgSize(source){
-          source.height = window.innerHeight;
-          source.width = window.innerWidth;
-          return true;
+        var x = document.getElementById("music"); 
+        function playMusic() { 
+            x.volume = 0.075;
+            x.play(); 
+        } 
+        function pauseMusic() { 
+            x.pause(); 
         }
     </script>
 </head>
@@ -19,10 +25,13 @@
         <canvas id="foreground"></canvas>
         <canvas id="status"></canvas>
         <canvas id="sprites"></canvas>
+        <p class="hpStat" id="AIHP"></p><p class="hpStat" id="PlayerHP"></p>
         <script src="js\canvas.js"></script>
     </div>
     <div class="interactions">
-        <p class="dialog">Hello</p>
+        <button onclick="playMusic()" id="playMusic">Play Music</button>
+        <p id="dialog"></p>
+        <script src="js\dialog.js"></script>
         <table id="menu">
             <tr>
                 <td><button class="buttonDef fight"><span class="selector">> </span><span class="btnName">Fight</span></button></td>
